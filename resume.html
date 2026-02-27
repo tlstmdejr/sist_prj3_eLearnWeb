@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이력서 - 포트폴리오</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif;
+            font-size: 13px;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20mm 18mm;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+
+        /* ───────── 상단 타이틀 ───────── */
+        .doc-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 14px;
+            color: #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+
+        /* ───────── 기본 정보 테이블 ───────── */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 18px;
+        }
+        .info-table td {
+            border: 1px solid #aaa;
+            padding: 7px 10px;
+            vertical-align: top;
+        }
+        .info-table .label {
+            background: #e8edf5;
+            font-weight: 700;
+            width: 70px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .info-table .photo-cell {
+            width: 95px;
+            height: 120px;
+            text-align: center;
+            vertical-align: middle;
+            background: #f0f0f0;
+            font-size: 12px;
+            color: #888;
+            border: 1px solid #aaa;
+            row-span: 5;
+        }
+
+        /* ───────── 섹션 헤더 ───────── */
+        .section-title {
+            background: #2c3e6b;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 12px;
+            margin-top: 18px;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+        }
+
+        /* ───────── 일반 테이블 ───────── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data-table th {
+            background: #dce4f0;
+            font-weight: 700;
+            padding: 6px 10px;
+            border: 1px solid #aaa;
+            text-align: center;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .data-table td {
+            border: 1px solid #aaa;
+            padding: 6px 10px;
+            vertical-align: top;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        .data-table .center { text-align: center; }
+        .data-table .label-col {
+            background: #f2f5fc;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            width: 90px;
+        }
+
+        /* ───────── 기술 스택 배지 ───────── */
+        .badge {
+            display: inline-block;
+            background: #2c3e6b;
+            color: #fff;
+            border-radius: 3px;
+            padding: 2px 8px;
+            margin: 2px 3px 2px 0;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge.green { background: #27ae60; }
+        .badge.orange { background: #d35400; }
+        .badge.teal  { background: #16a085; }
+        .badge.gray  { background: #555; }
+        .badge.red   { background: #c0392b; }
+
+        /* ───────── 기능 목록 ───────── */
+        .feature-list { padding-left: 0; list-style: none; }
+        .feature-list li { padding: 2px 0 2px 14px; position: relative; line-height: 1.7; }
+        .feature-list li::before { content: "▸"; position: absolute; left: 0; color: #2c3e6b; font-size: 11px; top: 3px; }
+
+        .sub-title {
+            font-weight: 700;
+            color: #2c3e6b;
+            margin-top: 6px;
+            margin-bottom: 2px;
+            font-size: 12px;
+        }
+
+        /* ───────── 역할 담당 ───────── */
+        .role-box {
+            background: #f8f9fe;
+            border-left: 4px solid #2c3e6b;
+            padding: 8px 12px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        @media print {
+            body { background: #fff; }
+            .page { margin: 0; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- ══════════════ 타이틀 ══════════════ -->
+    <div class="doc-title">이 력 서</div>
+
+    <!-- ══════════════ 기본 정보 ══════════════ -->
+    <table class="info-table">
+        <tr>
+            <td class="label">성&nbsp;&nbsp;&nbsp;명</td>
+            <td style="width:130px;"></td>
+            <td class="label">생년월일</td>
+            <td style="width:130px;"></td>
+            <td class="photo-cell" rowspan="5" style="width:95px;vertical-align:middle;">
+                사&nbsp;진<br>(3×4)
+            </td>
+        </tr>
+        <tr>
+            <td class="label">연&nbsp;&nbsp;락&nbsp;&nbsp;처</td>
+            <td></td>
+            <td class="label">이&nbsp;&nbsp;메&nbsp;&nbsp;일</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="label">GitHub</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td class="label">학&nbsp;&nbsp;&nbsp;력</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td class="label">주&nbsp;&nbsp;&nbsp;소</td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+    <!-- ══════════════ 기술 스택 ══════════════ -->
+    <div class="section-title">&#9654; 보유 기술</div>
+    <table class="data-table">
+        <tr>
+            <td class="label-col">Language</td>
+            <td>
+                <span class="badge orange">Java 17</span>
+                <span class="badge gray">HTML5</span>
+                <span class="badge gray">CSS3</span>
+                <span class="badge gray">JavaScript (ES6+)</span>
+                <span class="badge gray">SQL (Oracle)</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-col">Framework</td>
+            <td>
+                <span class="badge">Spring Boot 4.0.2</span>
+                <span class="badge">MyBatis 4.0.1</span>
+                <span class="badge teal">Thymeleaf</span>
+                <span class="badge teal">Tailwind CSS</span>
+                <span class="badge teal">Bootstrap</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-col">Database</td>
+            <td>
+                <span class="badge red">Oracle 11g</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-col">Library</td>
+            <td>
+                <span class="badge gray">jQuery 3.7.1</span>
+                <span class="badge gray">Lombok</span>
+                <span class="badge gray">BCrypt</span>
+                <span class="badge gray">Swiper.js</span>
+                <span class="badge gray">Lucide Icons</span>
+                <span class="badge gray">json-simple</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-col">Tool &amp; ETC</td>
+            <td>
+                <span class="badge green">Git / GitHub</span>
+                <span class="badge green">Maven</span>
+                <span class="badge green">IntelliJ IDEA</span>
+                <span class="badge green">DBeaver</span>
+                <span class="badge green">Gmail SMTP</span>
+                <span class="badge green">Solapi SMS</span>
+            </td>
+        </tr>
+    </table>
+
+    <!-- ══════════════ 프로젝트 ══════════════ -->
+    <div class="section-title">&#9654; 프로젝트 &nbsp;|&nbsp; intlearn – 온라인 강의 플랫폼</div>
+    <table class="data-table">
+        <!-- 개요 -->
+        <tr>
+            <td class="label-col">프로젝트명</td>
+            <td colspan="3"><strong>intlearn</strong> – Spring Boot 기반 이러닝(e-Learning) 웹 플랫폼</td>
+        </tr>
+        <tr>
+            <td class="label-col">개발 기간</td>
+            <td style="width:200px;"></td>
+            <td class="label-col" style="width:90px;">팀 구성</td>
+            <td>총 &nbsp;__ 명 &nbsp;(개발자 __ 명)</td>
+        </tr>
+        <tr>
+            <td class="label-col">GitHub URL</td>
+            <td colspan="3">https://github.com/tlstmdejr/sist_prj3_eLearnWeb</td>
+        </tr>
+        <!-- 기술 스택 -->
+        <tr>
+            <td class="label-col">기술 스택</td>
+            <td colspan="3">
+                <table style="width:100%;border-collapse:collapse;font-size:11px;">
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;width:80px;">OS</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">Windows 10 / 11</td>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;width:80px;">Database</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">Oracle 11g (JDBC – ojdbc11)</td>
+                    </tr>
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">Back-end</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">Java 17 · Spring Boot 4.0.2 · MyBatis 4.0.1</td>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">Front-end</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">Thymeleaf · Tailwind CSS · Bootstrap · jQuery 3.7.1</td>
+                    </tr>
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">Build</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">Maven 3</td>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">Security</th>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">BCrypt(10 rounds) · AES-256 암호화</td>
+                    </tr>
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">Etc</th>
+                        <td colspan="3" style="border:1px solid #aaa;padding:4px 8px;">
+                            Gmail SMTP(이메일 인증) · Solapi SDK(SMS 인증) · 세션 기반 인터셉터(3-Role)
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- 프로젝트 소개 -->
+        <tr>
+            <td class="label-col">프로젝트<br>소개</td>
+            <td colspan="3" style="line-height:1.8;">
+                수강생(User)·강사(Instructor)·관리자(Admin) 3개 역할을 지원하는 <strong>통합 온라인 강의 플랫폼</strong>입니다.<br>
+                강의 등록·결제·수강·테스트·리뷰 등 실제 이러닝 서비스에 필요한 전 기능을 구현하였으며,<br>
+                Oracle DB 22개 테이블·133개 SQL 쿼리·160+ Java 클래스로 구성된 엔터프라이즈급 프로젝트입니다.
+            </td>
+        </tr>
+
+        <!-- DB 설계 -->
+        <tr>
+            <td class="label-col">DB 설계</td>
+            <td colspan="3">
+                <div class="sub-title">주요 테이블 (22개)</div>
+                <ul class="feature-list">
+                    <li><strong>회원 관리:</strong> USERS · INSTRUCTOR · MANAGER</li>
+                    <li><strong>강의 관련:</strong> LECTURE · CHAPTER · CATEGORY · RELATIVE_SKILL</li>
+                    <li><strong>학습 진도:</strong> MY_LECTURE · MY_CHAPTER (PROGRESS 0~100, PROGTIME 초단위)</li>
+                    <li><strong>테스트:</strong> TEST · TEST_QUESTION · MY_TEST · TEST_EXAMINATION</li>
+                    <li><strong>결제:</strong> MY_CART · PAYMENT_DETAIL · PAYMENT · PAYMENT_DETAIL2</li>
+                    <li><strong>커뮤니티:</strong> QUESTION · REVIEW · ANNOUNCEMENT</li>
+                    <li><strong>이력 관리:</strong> ATTENDANCE · TRANSMISSION_HISTORY</li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- 주요 기능 -->
+        <tr>
+            <td class="label-col">주요 기능</td>
+            <td colspan="3">
+                <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:5px 8px;width:30%;">역할</th>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:5px 8px;">기능</th>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:5px 8px;font-weight:700;color:#2c3e6b;vertical-align:top;">
+                            수강생 (User)
+                        </td>
+                        <td style="border:1px solid #aaa;padding:5px 8px;">
+                            <ul class="feature-list">
+                                <li>회원가입 / 로그인 (이메일·SMS 인증코드 발송)</li>
+                                <li>강의 목록 검색·필터·페이지네이션 (8개씩)</li>
+                                <li>장바구니 담기 → 결제(카드) → 수강 등록</li>
+                                <li>동영상 강의 시청 + 진도율 실시간 저장</li>
+                                <li>강의 자료(PDF 등) 다운로드</li>
+                                <li>객관식 테스트 응시 → 점수·해설 확인</li>
+                                <li>강의 리뷰(1~5점) 작성·수정·삭제</li>
+                                <li>Q&amp;A 게시판 질문 등록</li>
+                                <li>마이페이지 (수강 현황·대시보드·결제 내역·프로필 설정)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:5px 8px;font-weight:700;color:#27ae60;vertical-align:top;">
+                            강사 (Instructor)
+                        </td>
+                        <td style="border:1px solid #aaa;padding:5px 8px;">
+                            <ul class="feature-list">
+                                <li>강사 회원가입 → 관리자 승인 대기</li>
+                                <li>강의 등록·수정·삭제 (썸네일, 카테고리, 가격 설정)</li>
+                                <li>챕터 등록 (동영상·문서 파일 업로드, 최대 10MB)</li>
+                                <li>객관식 테스트 문제 출제 (4지선다 + 해설)</li>
+                                <li>수강생 Q&amp;A 답변</li>
+                                <li>강사 대시보드 (강의별 수강 현황·수익 통계)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:5px 8px;font-weight:700;color:#c0392b;vertical-align:top;">
+                            관리자 (Admin)
+                        </td>
+                        <td style="border:1px solid #aaa;padding:5px 8px;">
+                            <ul class="feature-list">
+                                <li>회원·강사 계정 활성화/비활성화 관리</li>
+                                <li>강의 승인·반려 (반려 사유 입력)</li>
+                                <li>플랫폼 공지사항 CRUD</li>
+                                <li>관리자 대시보드 (전체 통계·신규 가입·수익 현황)</li>
+                                <li>결제 내역 및 수수료 리포트 조회</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- 구현 알고리즘·핵심 로직 -->
+        <tr>
+            <td class="label-col">핵심 로직</td>
+            <td colspan="3">
+                <ul class="feature-list">
+                    <li><strong>페이지네이션:</strong> pageScale() · totalPage() · startNum() · endNum() · pagination2() 메서드로 전 목록에 동일한 페이징 구조 적용</li>
+                    <li><strong>결제 트랜잭션:</strong> @Transactional(rollbackFor=Exception.class) – PAYMENT_DETAIL → PAYMENT → PAYMENT_DETAIL2 → MY_LECTURE 순차 삽입, 오류 시 전체 롤백</li>
+                    <li><strong>보안:</strong> BCrypt 해싱(비밀번호) + AES-256(이름·이메일 PII 암호화) + 세션 인터셉터 3-Role 분기</li>
+                    <li><strong>학습 진도:</strong> MY_CHAPTER 테이블에 PROGRESS(0~100)·PROGTIME(초)·ACTUALTIME 실시간 갱신</li>
+                    <li><strong>테스트 채점:</strong> TEST_EXAMINATION에 선택지 기록 → ANS 컬럼 비교로 자동 채점 후 MY_TEST에 SCORE 저장</li>
+                    <li><strong>승인 워크플로우:</strong> 강의 APPROVAL 플래그 + REJECT_REASON – 등록 → 심사 → 승인/반려 3단계</li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- 아키텍처 -->
+        <tr>
+            <td class="label-col">아키텍처</td>
+            <td colspan="3" style="line-height:1.9;font-size:12px;">
+                <strong>Controller → Service → Mapper(MyBatis XML) → Oracle DB</strong> 4계층 MVC 구조<br>
+                Controller 33개 · Service 31개 · Mapper 27개 · DTO/Domain 64개 · SQL 133개 · HTML 템플릿 90+개
+            </td>
+        </tr>
+
+        <!-- 담당 역할 -->
+        <tr>
+            <td class="label-col">담당 역할</td>
+            <td colspan="3">
+                <div class="role-box">
+                    ※ 아래 내용을 본인 담당 파트에 맞게 수정하세요.<br><br>
+                    ● &nbsp;수강생 결제 모듈 (장바구니·결제·수강 등록) 전체 설계 및 구현<br>
+                    ● &nbsp;강의 목록·상세·검색 페이지 (페이지네이션 포함) 구현<br>
+                    ● &nbsp;동영상 시청 및 학습 진도 추적 기능 구현<br>
+                    ● &nbsp;Oracle DB 테이블 설계 참여 (PAYMENT 계열 4개 테이블)<br>
+                    ● &nbsp;MyBatis XML 매퍼 작성 (UserPaymentMapper 등 __ 개)<br>
+                    ● &nbsp;이메일/SMS 인증 서비스 연동 (Gmail SMTP · Solapi SDK)
+                </div>
+            </td>
+        </tr>
+
+        <!-- 트러블슈팅 -->
+        <tr>
+            <td class="label-col">트러블<br>슈팅</td>
+            <td colspan="3">
+                <ul class="feature-list">
+                    <li>
+                        <strong>[결제 동시성 문제]</strong> 동일 강의를 장바구니에 중복 담는 경우 INSERT 오류 발생
+                        → MY_CART 테이블에 UNIQUE(USER_ID, LECT_ID) 제약 추가 및 서비스 레이어 중복 체크 로직 선적용으로 해결
+                    </li>
+                    <li>
+                        <strong>[파일 업로드 경로 문제]</strong> 배포 환경에서 C:/upload/ 절대 경로 불일치
+                        → application.properties에 경로 변수 외부화하여 환경별 설정 분리
+                    </li>
+                    <li>
+                        <strong>[AES 암호화 길이 초과]</strong> 이름·이메일 암호화 시 VARCHAR2 컬럼 길이 초과
+                        → 컬럼 크기를 암호화 후 Hex 길이 기준으로 재설계 (기존 50 → 200 확장)
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- 화면 구성 -->
+        <tr>
+            <td class="label-col">화면 구성</td>
+            <td colspan="3" style="font-size:12px;line-height:1.8;">
+                <table style="width:100%;border-collapse:collapse;font-size:11px;">
+                    <tr>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">페이지</th>
+                        <th style="border:1px solid #aaa;background:#dce4f0;padding:4px 8px;">설명</th>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">메인 홈</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">카테고리별 강의 목록, Swiper.js 배너 슬라이더</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">강의 목록</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">카테고리·키워드 검색 필터 + 페이지네이션(8개/페이지)</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">강의 상세</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">챕터 목록, 강사 정보, 리뷰 목록(10개/페이지), 장바구니 버튼</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">동영상 시청</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">진도율 실시간 갱신, 챕터 이동 네비게이션, 자료 다운로드</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">테스트</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">4지선다 문항 표시, 제출 후 채점 결과·해설 제공</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">결제</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">장바구니 → 결제 수단 선택 → 성공/실패 페이지</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">마이페이지</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">학습 대시보드, 수강 목록, 결제 내역, 프로필·계정 설정</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">강사 대시보드</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">강의별 수강 현황·수익 통계, 챕터·테스트 관리</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #aaa;padding:4px 8px;white-space:nowrap;">관리자 대시보드</td>
+                        <td style="border:1px solid #aaa;padding:4px 8px;">회원·강사·강의·결제 통합 관리, 공지사항 CRUD</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- ══════════════ 자기소개 ══════════════ -->
+    <div class="section-title">&#9654; 자기소개</div>
+    <table class="data-table">
+        <tr>
+            <td style="padding:10px 12px;line-height:2;min-height:80px;font-size:13px;">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+
+    <!-- 하단 서명 -->
+    <div style="text-align:right;margin-top:22px;font-size:13px;line-height:2.2;">
+        위의 내용은 사실과 다름이 없음을 확인합니다.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;작성일 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 년 &nbsp;&nbsp;&nbsp;&nbsp; 월 &nbsp;&nbsp;&nbsp;&nbsp; 일<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;성&nbsp;&nbsp;&nbsp;명 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (인)
+    </div>
+
+</div>
+</body>
+</html>
